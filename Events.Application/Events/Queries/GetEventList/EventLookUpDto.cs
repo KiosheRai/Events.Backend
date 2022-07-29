@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
+using Events.Application.Common.Mappings;
 using Events.Domain;
 using System;
 
 namespace Events.Application.Events.Queries.GetEventList
 {
-    public class EventLookUpDto
+    public class EventLookUpDto : IMapWith<Event>
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
