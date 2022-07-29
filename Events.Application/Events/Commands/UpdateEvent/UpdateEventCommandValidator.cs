@@ -7,16 +7,16 @@ namespace Events.Application.Events.Commands.UpdateEvent
     {
         public UpdateEventCommandValidator()
         {
-            RuleFor(createNoteCommand =>
-                 createNoteCommand.Title).NotEmpty().MaximumLength(50);
-            RuleFor(createNoteCommand =>
-                createNoteCommand.Address).NotEmpty().MaximumLength(50);
-            RuleFor(createNoteCommand =>
-                createNoteCommand.EventDate).NotNull();
-            RuleFor(createNoteCommand =>
-                createNoteCommand.UserId).NotEqual(Guid.Empty);
-            RuleFor(createNoteCommand =>
-                createNoteCommand.Id).NotEqual(Guid.Empty);
+            RuleFor(UpdateEventCommand =>
+                 UpdateEventCommand.Title).NotEmpty().MaximumLength(50);
+            RuleFor(UpdateEventCommand =>
+                UpdateEventCommand.Address).NotEmpty().MaximumLength(50);
+            RuleFor(UpdateEventCommand =>
+                UpdateEventCommand.EventDate).NotNull();
+            RuleFor(UpdateEventCommand =>
+                UpdateEventCommand.UserId).NotEqual(Guid.Empty);
+            RuleFor(UpdateEventCommand =>
+                UpdateEventCommand.Id).NotEqual(Guid.Empty);
         }
     }
 }

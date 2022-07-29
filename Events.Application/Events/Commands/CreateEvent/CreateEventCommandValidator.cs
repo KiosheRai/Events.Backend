@@ -7,14 +7,14 @@ namespace Events.Application.Events.Commands.CreateEvent
     {
         public CreateEventCommandValidator()
         {
-            RuleFor(createNoteCommand =>
-                createNoteCommand.Title).NotEmpty().MaximumLength(50);
-            RuleFor(createNoteCommand =>
-                createNoteCommand.Address).NotEmpty().MaximumLength(50);
-            RuleFor(createNoteCommand =>
-                createNoteCommand.EventDate).NotNull();
-            RuleFor(createNoteCommand =>
-                createNoteCommand.UserId).NotEqual(Guid.Empty);
+            RuleFor(CreateEventCommand =>
+                CreateEventCommand.Title).NotEmpty().MaximumLength(50);
+            RuleFor(CreateEventCommand =>
+                CreateEventCommand.Address).NotEmpty().MaximumLength(50);
+            RuleFor(CreateEventCommand =>
+                CreateEventCommand.EventDate).NotNull();
+            RuleFor(CreateEventCommand =>
+                CreateEventCommand.UserId).NotEqual(Guid.Empty);
         }
     }
 }
