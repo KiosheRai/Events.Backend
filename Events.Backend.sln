@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{36CBF079-2385-4A03-8510-4392BD841E5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.Domain", "Events.Domain\Events.Domain.csproj", "{01FAEEF9-FFBD-4AF2-BF84-FE2A99C4995F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.Domain", "Events.Domain\Events.Domain.csproj", "{01FAEEF9-FFBD-4AF2-BF84-FE2A99C4995F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.Application", "Events.Application\Events.Application.csproj", "{D4526A24-DEEF-4768-9BF8-782F805A37F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.Application", "Events.Application\Events.Application.csproj", "{D4526A24-DEEF-4768-9BF8-782F805A37F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.Persistence", "Events.Persistence\Events.Persistence.csproj", "{76B2001F-8FAD-408A-B8C2-CB90FF5DAADA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.Persistence", "Events.Persistence\Events.Persistence.csproj", "{76B2001F-8FAD-408A-B8C2-CB90FF5DAADA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.WebApi", "Events.WebApi\Events.WebApi.csproj", "{26B8D031-1132-4038-ABD0-BB27D8AC87BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.WebApi", "Events.WebApi\Events.WebApi.csproj", "{F77720B7-88FC-4126-815D-BD3B85EC7298}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{76B2001F-8FAD-408A-B8C2-CB90FF5DAADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76B2001F-8FAD-408A-B8C2-CB90FF5DAADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76B2001F-8FAD-408A-B8C2-CB90FF5DAADA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26B8D031-1132-4038-ABD0-BB27D8AC87BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26B8D031-1132-4038-ABD0-BB27D8AC87BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26B8D031-1132-4038-ABD0-BB27D8AC87BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26B8D031-1132-4038-ABD0-BB27D8AC87BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F77720B7-88FC-4126-815D-BD3B85EC7298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F77720B7-88FC-4126-815D-BD3B85EC7298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F77720B7-88FC-4126-815D-BD3B85EC7298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F77720B7-88FC-4126-815D-BD3B85EC7298}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,7 +49,7 @@ Global
 		{01FAEEF9-FFBD-4AF2-BF84-FE2A99C4995F} = {E5FCD7FD-5946-462B-8ECB-0E915F8717F5}
 		{D4526A24-DEEF-4768-9BF8-782F805A37F5} = {E5FCD7FD-5946-462B-8ECB-0E915F8717F5}
 		{76B2001F-8FAD-408A-B8C2-CB90FF5DAADA} = {213C117F-941C-4930-9E08-C8EF42FE2BBF}
-		{26B8D031-1132-4038-ABD0-BB27D8AC87BA} = {7E8FE3EB-52B0-41CA-ABE1-F8577C2199BD}
+		{F77720B7-88FC-4126-815D-BD3B85EC7298} = {7E8FE3EB-52B0-41CA-ABE1-F8577C2199BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C30E561A-4655-4ED3-8AF0-AF1B90D07805}
