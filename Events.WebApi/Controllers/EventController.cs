@@ -21,7 +21,7 @@ namespace Events.WebApi.Controllers
         public EventController(IMapper mapper) => _mapper = mapper;
 
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<EventListVm>> GetAll()

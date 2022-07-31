@@ -6,15 +6,10 @@ using Events.WebApi.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Events.WebApi
 {
@@ -46,7 +41,18 @@ namespace Events.WebApi
                 });
             });
 
-            services.AddAuthentication();
+            services.AddAuthentication(config =>
+            {
+                config.DefaultAuthenticateScheme =
+                    JwtBearerDefaults.AuthenticationScheme;
+                config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer("Bearer", options =>
+                {
+                    options.Authority = "http://localhost:42418";
+                    options.Audience = "EventsWebAPI";
+                    options.RequireHttpsMetadata = false;
+                });
             services.AddAuthorization();
         }
 
