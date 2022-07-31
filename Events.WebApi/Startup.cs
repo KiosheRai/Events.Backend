@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Events.WebApi
 {
@@ -54,6 +55,7 @@ namespace Events.WebApi
                     options.RequireHttpsMetadata = false;
                 });
             services.AddAuthorization();
+            services.AddSwaggerGen();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -63,6 +65,12 @@ namespace Events.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(config =>
+            {
+                config.RoutePrefix = string.Empty;
+                config.SwaggerEndpoint("swagger/v1/swagger.json", "Web API");
+            });
             app.UseCusomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
