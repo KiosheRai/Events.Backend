@@ -19,14 +19,14 @@ namespace Events.WebApi.Models
         public void Mapping(Profile profile)
         {
             profile.CreateMap<CreateEventDto, CreateEventCommand>()
-                .ForMember(noteCommand => noteCommand.Title,
-                    opt => opt.MapFrom(noteDto => noteDto.Title))
-                .ForMember(noteCommand => noteCommand.Details,
-                    opt => opt.MapFrom(noteDto => noteDto.Details))
-                .ForMember(noteCommand => noteCommand.Address,
-                    opt => opt.MapFrom(noteDto => noteDto.Address))
-                .ForMember(noteCommand => noteCommand.EventDate,
-                    opt => opt.MapFrom(noteDto => noteDto.EventDate));
+                .ForMember(eventCommand => eventCommand.Title,
+                    opt => opt.MapFrom(eventDto => eventDto.Title))
+                .ForMember(eventCommand => eventCommand.Details,
+                    opt => opt.MapFrom(eventDto => eventDto.Details))
+                .ForMember(eventCommand => eventCommand.Address,
+                    opt => opt.MapFrom(eventDto => eventDto.Address))
+                .ForMember(eventCommand => eventCommand.EventDate,
+                    opt => opt.MapFrom(eventDto => eventDto.EventDate));
         }
     }
 }

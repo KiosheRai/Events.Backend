@@ -19,7 +19,7 @@ namespace Events.Application.Events.Commands.CreateEvent
         public async Task<Guid> Handle(CreateEventCommand request,
             CancellationToken cancellationToken)
         {
-            var note = new Event
+            var eve = new Event
             {
                 Id = Guid.NewGuid(),
                 UserId = request.UserId,
@@ -31,10 +31,10 @@ namespace Events.Application.Events.Commands.CreateEvent
                 EditDate = null
             };
 
-            await _dbContext.Events.AddAsync(note, cancellationToken);
+            await _dbContext.Events.AddAsync(eve, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return note.Id;
+            return eve.Id;
         }
     }
 }

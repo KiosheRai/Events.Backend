@@ -8,10 +8,10 @@ namespace Events.Persistence.EntityTypeConfigurations
     {
         public void Configure(EntityTypeBuilder<Event> builder)
         {
-            builder.HasKey(note => note.Id);
-            builder.HasIndex(note => note.Id).IsUnique();
-            builder.Property(note => note.Title).HasMaxLength(50);
-            builder.Property(note => note.Address).HasMaxLength(50);
+            builder.HasKey(eve => eve.Id);
+            builder.HasIndex(eve => eve.Id).IsUnique();
+            builder.Property(eve => eve.Title).HasMaxLength(50);
+            builder.Property(eve => eve.Address).HasMaxLength(50);
         }
     }
 }

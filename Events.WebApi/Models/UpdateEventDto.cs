@@ -16,16 +16,16 @@ namespace Events.WebApi.Models
         public void Mapping(Profile profile)
         {
             profile.CreateMap<UpdateEventDto, UpdateEventCommand>()
-                .ForMember(noteCommand => noteCommand.Id,
-                    opt => opt.MapFrom(noteDto => noteDto.Id))
-                .ForMember(noteCommand => noteCommand.Title,
-                    opt => opt.MapFrom(noteDto => noteDto.Title))
-                .ForMember(noteCommand => noteCommand.Details,
-                    opt => opt.MapFrom(noteDto => noteDto.Details))
-                .ForMember(noteCommand => noteCommand.Address,
-                    opt => opt.MapFrom(noteDto => noteDto.Address))
-                .ForMember(noteCommand => noteCommand.EventDate,
-                    opt => opt.MapFrom(noteDto => noteDto.EventDate));
+                .ForMember(eventCommand => eventCommand.Id,
+                    opt => opt.MapFrom(eveDto => eveDto.Id))
+                .ForMember(eventCommand => eventCommand.Title,
+                    opt => opt.MapFrom(eveDto => eveDto.Title))
+                .ForMember(eventCommand => eventCommand.Details,
+                    opt => opt.MapFrom(eveDto => eveDto.Details))
+                .ForMember(eventCommand => eventCommand.Address,
+                    opt => opt.MapFrom(eveDto => eveDto.Address))
+                .ForMember(eventCommand => eventCommand.EventDate,
+                    opt => opt.MapFrom(eveDto => eveDto.EventDate));
         }
     }
 }

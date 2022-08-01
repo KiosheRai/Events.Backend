@@ -19,22 +19,22 @@ namespace Events.Application.Events.Queries.GetEventDetails
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Event, EventDetailsVm>()
-                .ForMember(noteVm => noteVm.Id,
-                opt => opt.MapFrom(note => note.Id))
-                .ForMember(noteVm => noteVm.UserId,
-                opt => opt.MapFrom(note => note.UserId))
-                .ForMember(noteVm => noteVm.Title,
-                opt => opt.MapFrom(note => note.Title))
-                .ForMember(noteVm => noteVm.Details,
-                opt => opt.MapFrom(note => note.Details))
-                .ForMember(noteVm => noteVm.Address,
-                opt => opt.MapFrom(note => note.Address))
-                .ForMember(noteVm => noteVm.EventDate,
-                opt => opt.MapFrom(note => note.EventDate))
-                .ForMember(noteVm => noteVm.CreationDate,
-                opt => opt.MapFrom(note => note.CreationDate))
-                .ForMember(noteVm => noteVm.EditDate,
-                opt => opt.MapFrom(note => note.EditDate));
+                .ForMember(eventVm => eventVm.Id,
+                opt => opt.MapFrom(eve => eve.Id))
+                .ForMember(eventVm => eventVm.UserId,
+                opt => opt.MapFrom(eve => eve.UserId))
+                .ForMember(eventVm => eventVm.Title,
+                opt => opt.MapFrom(eve => eve.Title))
+                .ForMember(eventVm => eventVm.Details,
+                opt => opt.MapFrom(eve => eve.Details))
+                .ForMember(eventVm => eventVm.Address,
+                opt => opt.MapFrom(eve => eve.Address))
+                .ForMember(eventVm => eventVm.EventDate,
+                opt => opt.MapFrom(eve => eve.EventDate))
+                .ForMember(eventVm => eventVm.CreationDate,
+                opt => opt.MapFrom(eve => eve.CreationDate))
+                .ForMember(eventVm => eventVm.EditDate,
+                opt => opt.MapFrom(eve => eve.EditDate));
         }
     }
 }

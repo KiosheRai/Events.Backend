@@ -15,14 +15,14 @@ namespace Events.Application.Events.Queries.GetEventList
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Event, EventLookUpDto>()
-                .ForMember(noteDto => noteDto.Id,
-                    opt => opt.MapFrom(note => note.Id))
-                .ForMember(noteDto => noteDto.Title,
-                    opt => opt.MapFrom(note => note.Title))
-                .ForMember(noteDto => noteDto.UserId,
-                        opt => opt.MapFrom(note => note.UserId))
-                .ForMember(noteDto => noteDto.EventDate,
-                        opt => opt.MapFrom(note => note.EventDate));
+                .ForMember(eventDto => eventDto.Id,
+                    opt => opt.MapFrom(eve => eve.Id))
+                .ForMember(eventDto => eventDto.Title,
+                    opt => opt.MapFrom(eve => eve.Title))
+                .ForMember(eventDto => eventDto.UserId,
+                        opt => opt.MapFrom(eve => eve.UserId))
+                .ForMember(eventDto => eventDto.EventDate,
+                        opt => opt.MapFrom(eve => eve.EventDate));
         }
     }
 }

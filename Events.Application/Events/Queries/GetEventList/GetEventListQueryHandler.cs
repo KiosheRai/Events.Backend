@@ -21,11 +21,11 @@ namespace Events.Application.Events.Queries.GetEventList
         public async Task<EventListVm> Handle(GetEventListQuery request,
             CancellationToken cancellationToken)
         {
-            var noteQuery = await _dbContext.Events
+            var eventQuery = await _dbContext.Events
                 .ProjectTo<EventLookUpDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 
-            return new EventListVm { Notes = noteQuery };
+            return new EventListVm { Events = eventQuery };
         }
     }
 }

@@ -29,11 +29,8 @@ namespace Events.WebApi.Controllers
         /// </remarks>
         /// <returns>Returns EventListVm</returns>
         /// <response code="200">Success</response>
-        /// <response code="401">If the user is unauthorised</response>
         [HttpGet]
-        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<EventListVm>> GetAll()
         {
             var query = new GetEventListQuery
@@ -53,11 +50,8 @@ namespace Events.WebApi.Controllers
         /// <param name="id">event id (guid)</param>
         /// <returns>Returns EventDetailsVm</returns>
         /// <response code="200">Success</response>
-        /// <response code="401">If the user in unauthorized</response>
         [HttpGet("{id}")]
-        [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<EventDetailsVm>> Get(Guid id)
         {
             var query = new GetEventDetailsQuery
@@ -89,12 +83,12 @@ namespace Events.WebApi.Controllers
         [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult> Create([FromBody] CreateEventDto createNoteDto)
+        public async Task<ActionResult> Create([FromBody] CreateEventDto createEventDto)
         {
-            var command = _mapper.Map<CreateEventCommand>(createNoteDto);
+            var command = _mapper.Map<CreateEventCommand>(createEventDto);
             command.UserId = UserId;
-            var noteId = await Mediator.Send(command);
-            return Ok(noteId);
+            var eventId = await Mediator.Send(command);
+            return Ok(eventId);
         }
 
         /// <summary>
@@ -102,7 +96,7 @@ namespace Events.WebApi.Controllers
         /// </summary>
         /// <remarks>
         /// Sample request:
-        /// PUT /note
+        /// PUT /event
         /// {
         ///     title: "new event title",
         ///     details: "new event details"
@@ -118,9 +112,9 @@ namespace Events.WebApi.Controllers
         [Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult> Update([FromBody] UpdateEventDto updateNoteDto)
+        public async Task<ActionResult> Update([FromBody] UpdateEventDto updateEventDto)
         {
-            var command = _mapper.Map<UpdateEventCommand>(updateNoteDto);
+            var command = _mapper.Map<UpdateEventCommand>(updateEventDto);
             command.Id = UserId;
             await Mediator.Send(command);
             return NoContent();

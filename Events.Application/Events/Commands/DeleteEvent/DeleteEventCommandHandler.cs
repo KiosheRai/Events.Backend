@@ -19,7 +19,7 @@ namespace Events.Application.Events.Commands.DeleteEvent
             CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Events
-                .FirstOrDefaultAsync(note => note.Id == request.Id, cancellationToken);
+                .FirstOrDefaultAsync(eve => eve.Id == request.Id, cancellationToken);
 
             if (entity == null || entity.UserId != request.UserId)
             {

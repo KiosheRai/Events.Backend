@@ -22,7 +22,7 @@ namespace Events.Application.Events.Commands.UpdateEvent
             CancellationToken cancellationToken)
         {
             var entity =
-                await _dbContext.Events.FirstOrDefaultAsync(Note => Note.Id == request.Id, cancellationToken);
+                await _dbContext.Events.FirstOrDefaultAsync(eve => eve.Id == request.Id, cancellationToken);
 
             if (entity == null || entity.UserId != request.UserId)
             {

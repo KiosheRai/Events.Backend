@@ -2,6 +2,7 @@ using Events.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
 
 namespace Events.WebApi
@@ -20,9 +21,10 @@ namespace Events.WebApi
                     var context = serviceProvider.GetRequiredService<EventsDbContext>();
                     DbInitializer.Initialize(context);
                 }
-                catch (Exception ex)
+                catch (Exception exception)
                 {
-                    //ToDo: Need to Fix
+                    var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(exception, "An error occurred while app initializion");
                 }
             }
 
