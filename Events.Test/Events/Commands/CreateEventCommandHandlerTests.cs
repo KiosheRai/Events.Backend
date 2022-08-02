@@ -11,7 +11,7 @@ namespace Events.Test.Events.Commands
     public class CreateEventCommandHandlerTests : TestCommandBase
     {
         [Fact]
-        public async Task CreateNoteCommandHandler_Success()
+        public async Task CreateEventCommandHandler_Success()
         {
             //Arrange
             var handler = new CreateEventCommandHandler(context);
